@@ -17,6 +17,19 @@ router.post("/mens", async (req, res) => {
     console.log(req.body);
     const insertMens = await addMensRecord.save();
     res.status(201).json(insertMens);
+
+    // * Alter version
+    // const userData = req.body;
+    // const newUser = MensRanking(userData);
+
+    // await newUser.save(function (err) {
+    //   if (err) {
+    //     res.json({ success: false, error: err });
+    //     return;
+    //   }
+
+    //   res.json({ success: true, data: newUser });
+    // });
   } catch (error) {
     res.status(400).send(error);
   }
